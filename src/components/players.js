@@ -1,4 +1,4 @@
-var BEST_FOOTBALL_PLAYERS = [
+const BEST_FOOTBALL_PLAYERS = [
 	"messi",
 	"monaldo",
 	"neymar",
@@ -12,7 +12,7 @@ var BEST_FOOTBALL_PLAYERS = [
 	"kante"
 ];
 
-function randomPlayer() {
+const randomPlayer = () => {
 	return BEST_FOOTBALL_PLAYERS[Math.floor(Math.random() * BEST_FOOTBALL_PLAYERS.length)];
 }
 
