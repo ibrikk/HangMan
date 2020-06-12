@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { randomWord } from './words.js';
+import React from 'react';
+import { randomPlayer } from './players.js'
 
-import step0 from './images/0.jpg';
-import step1 from './images/1.jpg';
-import step2 from './images/2.jpg';
-import step3 from './images/3.jpg';
-import step4 from './images/4.jpg';
-import step5 from './images/5.jpg';
-import step6 from './images/6.jpg';
+import step0 from './assets/0.jpg';
+import step1 from './assets/1.jpg';
+import step2 from './assets/2.jpg';
+import step3 from './assets/3.jpg';
+import step4 from './assets/4.jpg';
+import step5 from './assets/5.jpg';
+import step6 from './assets/6.jpg';
 
-class Hangman extends Component {
+class Hangman extends React.Component {
 	static defaultProps = {
 		maxWrong: 6,
 		images: [step0, step1, step2, step3, step4, step5, step6]
@@ -17,7 +17,7 @@ class Hangman extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { mistake: 0, guessed: new Set(), answer: randomWord() };
+		this.state = { mistake: 0, guessed: new Set(), answer: randomPlayer() };
 		this.handleGuess = this.handleGuess.bind(this);
 	}
 
@@ -25,16 +25,16 @@ class Hangman extends Component {
 		return this.state.answer.split('').map(bingo => (this.state.guessed.has(bingo) ? bingo : "_"));
 	}
 
-	handleGuess(evt) {
-		let letter = evt.target.value;
-		this.setState(st => ({
-			guessed: st.guessed.add(letter),
-			mistake: st.mistake + (st.answer.includes(letter) ? 0 : 1)
+	handleGuess(event) {
+		const letter = event.target.value;
+		this.setState(state => ({
+			guessed: state.guessed.add(letter),
+			mistake: state.mistake + (state.answer.includes(letter) ? 0 : 1)
 		}));
 	}
 
 	generateButtons() {
-		return "abcdefghijklmnopqrstuvwxyz".split('').map(letter => (
+		return "abcdefghijklmnopqrstuvwxyz ".split('').map(letter => (
 			<button
 				key={letter}
 				value={letter}
@@ -50,7 +50,7 @@ class Hangman extends Component {
 		this.setState({
 			mistake: 0,
 			guessed: new Set(),
-			answer: randomWord()
+			answer: randomPlayer()
 		});
 	};
 
@@ -70,7 +70,7 @@ class Hangman extends Component {
 			<div className='Hangman'>
 				<nav className='navbar navbar-expand-lg'>
 					<a className='navbar-brand text-light' href='/'>
-						Ibrahim's Hangman <small>Do (or) Die</small>
+						Best Football Players 2020 
 					</a>
 					<span className='d-xl-none d-lg-none text-primary'>
 						Guessed wrong: {this.state.mistake}
@@ -96,11 +96,11 @@ class Hangman extends Component {
 					</div>
 				</nav>
 				<p className='text-center'>
-					<img src={this.props.images[this.state.mistake]} alt={altText} />
+					<img src={this.props.assets[this.state.mistake]} alt={altText} />
 				</p>
-				<p className='text-center text-light'>Guess the Programming Language ?</p>
+				<p className='text-center text-light'>Guess the Football Player ?</p>
 				<p className='Hangman-word text-center'>
-					{!gameOver ? this.guessedWord() : this.state.answer}{" "}
+					{!gameOver ? this.guessedWord() : this.state.answer}{''}
 				</p>
 
 				<p className='text-center text-warning mt-4'>{gameStat}</p>

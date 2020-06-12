@@ -1,8 +1,8 @@
 import React from 'react';
 import Hangman from './components/hangman.js';
 
-function App() {
-	return (
+const App = () => {
+	return(
 		<div className='container'>
 			<Hangman />
 		</div>
