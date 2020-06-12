@@ -96,11 +96,11 @@ class Hangman extends React.Component {
 					</div>
 				</nav>
 				<p className='text-center'>
-					<img src={this.props.assets[this.state.mistake]} alt={altText} />
+					<img src={this.props.images[this.state.mistake]} alt={altText} />
 				</p>
 				<p className='text-center text-light'>Guess the Football Player ?</p>
 				<p className='Hangman-word text-center'>
-					{!gameOver ? this.guessedWord() : this.state.answer}{''}
+					{!gameOver ? this.guessedWord() : this.state.answer}{' '}
 				</p>
 
 				<p className='text-center text-warning mt-4'>{gameStat}</p>
