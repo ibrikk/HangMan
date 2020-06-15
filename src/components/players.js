@@ -1,6 +1,6 @@
 const BEST_FOOTBALL_PLAYERS = [
 	"messi",
-	"monaldo",
+	"ronaldo",
 	"neymar",
 	"koulibaly",
 	"mane",
