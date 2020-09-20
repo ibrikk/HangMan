@@ -1,5 +1,5 @@
 import React from 'react';
-import { randomPlayer } from './players.js'
+import { randomMarvelHero } from './marvelSuperHeroes';
 
 import step0 from './assets/0.jpg';
 import step1 from './assets/1.jpg';
@@ -9,7 +9,7 @@ import step4 from './assets/4.jpg';
 import step5 from './assets/5.jpg';
 import step6 from './assets/6.jpg';
 
-class Hangman extends React.Component {
+class HangmanMarvel extends React.Component {
 	static defaultProps = {
 		maxWrong: 6,
 		images: [step0, step1, step2, step3, step4, step5, step6]
@@ -17,7 +17,7 @@ class Hangman extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = { mistake: 0, guessed: new Set(), answer: randomPlayer() };
+		this.state = { mistake: 0, guessed: new Set(), answer: randomMarvelHero() };
 		this.handleGuess = this.handleGuess.bind(this);
 	}
 
@@ -50,7 +50,7 @@ class Hangman extends React.Component {
 		this.setState({
 			mistake: 0,
 			guessed: new Set(),
-			answer: randomPlayer()
+			answer: randomMarvelHero()
 		});
 	};
 
@@ -70,7 +70,7 @@ class Hangman extends React.Component {
 			<div className='Hangman'>
 				<nav className='navbar navbar-expand-lg'>
 					<a className='navbar-brand text-light' href='/'>
-						Best Football Players 2020 
+						MARVEL SUPERHEROES
 					</a>
 					<span className='d-xl-none d-lg-none text-primary'>
 						Guessed wrong: {this.state.mistake}
@@ -98,7 +98,7 @@ class Hangman extends React.Component {
 				<p className='text-center'>
 					<img src={this.props.images[this.state.mistake]} alt={altText} />
 				</p>
-				<p className='text-center text-light'>Guess the Football Player ?</p>
+				<p className='text-center text-light'>Who is this Superhero ?</p>
 				<p className='Hangman-word text-center'>
 					{!gameOver ? this.guessedWord() : this.state.answer}{' '}
 				</p>
@@ -117,4 +117,4 @@ class Hangman extends React.Component {
 	}
 }
 
-export default Hangman;
+export default HangmanMarvel; 

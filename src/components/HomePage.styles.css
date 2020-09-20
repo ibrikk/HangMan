@@ -1,0 +1,14 @@
+ button {
+	border: none;
+	font-family: inherit;
+	font-size: 2.5rem;
+	cursor: pointer;
+	width: 25rem;
+	margin: 250px 100px 250px 100px;
+	letter-spacing: 0px;
+	outline: none;
+	background: #07ffc9;
+	color: rgb(0, 0, 0);
+	border-radius: 10px;
+	padding-top: 15px;
+}
