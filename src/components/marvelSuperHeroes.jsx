@@ -1,5 +1,5 @@
 const MARVEL_SUPERHEROES = [
-	"spder-man",
+	"spider-man",
 	"iron man",
 	"thanos",
 	"captain america",
